@@ -1,0 +1,26 @@
+{
+  "name": "graceful_web_application",
+  "version": "1.0.0",
+  "description": "a simple but graceful web application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bullyork/graceWeb.git"
+  },
+  "keywords": [
+    "react",
+    "webpack",
+    "js",
+    "css3",
+    "html5"
+  ],
+  "author": "zyf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bullyork/graceWeb/issues"
+  },
+  "homepage": "https://github.com/bullyork/graceWeb#readme"
+}

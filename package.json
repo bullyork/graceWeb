@@ -4,7 +4,7 @@
   "description": "a simple but graceful web application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build":"webpack"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/bullyork/graceWeb#readme",
   "dependencies": {
+    "lodash": "^4.17.4",
     "material-ui": "^0.17.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",

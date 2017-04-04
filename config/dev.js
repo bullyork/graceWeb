@@ -81,7 +81,8 @@ module.exports = function () {
         name: 'manifest' //But since there are no more common modules between them we end up with just the runtime code included in the manifest file
       }),
       new HtmlWebpackPlugin({
-        template:'template/index.html'
+        template:'template/index.html',
+        cache: true
       }),
       new InlineManifestWebpackPlugin({
         name: 'webpackManifest'

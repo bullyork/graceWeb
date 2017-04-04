@@ -1,4 +1,4 @@
-- [ ] react-router
-- [ ] 真实路由
+- [x] react-router
+- [x] 真实路由
 - [ ] 使用lint，严格规范代码
 - [x] webpack

@@ -18,7 +18,7 @@ const render = (Component) => {
 render(App);
 
 // Hot Module Replacement API
-if (module.hot) {
+if(module.hot){
   module.hot.accept('./components/', () => {
     render(App)
   });

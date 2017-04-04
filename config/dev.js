@@ -13,9 +13,7 @@ module.exports = function () {
     entry: {
       main:[
         'react-hot-loader/patch',
-        'webpack-dev-server/client?http://localhost:8080',
-        'webpack/hot/only-dev-server',
-        // only- means to only hot reload for successful updates
+        'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr&timeout=2000&overlay=false',
         './src/index.js'
         ]
     },
@@ -98,6 +96,7 @@ module.exports = function () {
         name: 'webpackManifest'
       }),
       new ExtractTextPlugin('[name].css'),
+      new webpack.HotModuleReplacementPlugin(),
     ],
     devServer: {
       hot: true,

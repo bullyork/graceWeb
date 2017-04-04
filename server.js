@@ -22,10 +22,6 @@ app.use(require("webpack-hot-middleware")(compiler, {
     heartbeat: 2000
 }));
 
-app.get('*', function (request, response){
-  response.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
-})
-
 app.listen(3000, function () {
   console.log("Listening on port 3000!");
 });

@@ -4,7 +4,9 @@
   "description": "a simple but graceful web application",
   "main": "index.js",
   "scripts": {
-    "build":"webpack"
+    "build:dev": "webpack --env=dev --progress --profile --colors",
+    "build:prod": "webpack --env=prod --progress --profile --colors",
+    "start": "webpack-dev-server --hot --inline"
   },
   "repository": {
     "type": "git",
@@ -24,11 +26,40 @@
   },
   "homepage": "https://github.com/bullyork/graceWeb#readme",
   "dependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "bootstrap": "^3.3.7",
+    "chunk-manifest-webpack-plugin": "^1.0.0",
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "html-webpack-plugin": "^2.28.0",
+    "inline-manifest-webpack-plugin": "^3.0.1",
     "lodash": "^4.17.4",
     "material-ui": "^0.17.1",
+    "moment": "^2.18.1",
+    "postcss-loader": "^1.3.3",
+    "precss": "^1.4.0",
+    "promise-polyfill": "^6.0.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-hot-loader": "next",
     "react-tap-event-plugin": "^2.0.1",
-    "webpack": "^2.3.2"
+    "style-loader": "^0.16.1",
+    "webpack": "^2.3.2",
+    "webpack-chunk-hash": "^0.4.0",
+    "webpack-dev-middleware": "^1.10.1",
+    "webpack-dev-server": "^2.4.2",
+    "webpack-manifest-plugin": "^1.1.0",
+    "webpack-merge": "^4.1.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.22.0",
+    "babel-plugin-transform-regenerator": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.23.0"
   }
 }

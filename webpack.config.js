@@ -1,9 +1,10 @@
-var path = require('path');
-
-module.exports = {
-  entry: './src/index.js',
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+function buildConfig(env) {
+  if(env){
+    return require('./config/' + env + '.js')(env)
+  } else {
+    return require('./config/dev.js')()
   }
-};
+  
+}
+
+module.exports = buildConfig;

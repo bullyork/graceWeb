@@ -23,7 +23,9 @@ app.use(require("webpack-hot-middleware")(compiler, {
 }));
 
 app.get('*', function (request, response){
-  response.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
+  if(request.originalUrl.indexOf('hot-update.json') == -1){
+    response.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
+  }
 })
 
 app.listen(3000, function () {

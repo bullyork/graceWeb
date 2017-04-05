@@ -22,6 +22,7 @@ app.use(require("webpack-hot-middleware")(compiler, {
     heartbeat: 2000
 }));
 
+
 app.get('*', function (request, response){
   if(request.originalUrl.indexOf('hot-update.json') == -1){
     response.sendFile(path.resolve(__dirname, 'dist', 'index.html'))

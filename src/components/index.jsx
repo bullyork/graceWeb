@@ -1,9 +1,8 @@
 import React from 'react';
-import routeConfig from '../routes';
-import styles from './index.css';
 import {
   HashRouter as Router,
   Route,
+  Switch,
   Link,
   Redirect,
   withRouter
@@ -12,17 +11,20 @@ import About from './about'
 import Home from './home'
 import Article from './article'
 import Posts from './posts'
-
-const BasicExample = () => (
+import NoMatch from './common/noMatch'
+import './index.css'
+import './animate.css'
+const App = () => (
   <Router>
-    <div>
-      <Route exact path="/about" component={About}/>
-      <Route path="/" component={Home}/>
+    <Switch>
+      <Route path="/about" component={About}/>
+      <Route exact path="/" component={Home}/>
       <Route path="/home" component={Home}/>
       <Route path="/article" component={Article}/>
       <Route path="/posts" component={Posts}/>
-    </div>
+      <Route component={NoMatch}/>
+    </Switch>
   </Router>
 )
 
-export default BasicExample
+export default App

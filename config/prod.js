@@ -14,12 +14,17 @@ module.exports = function () {
       main:['babel-polyfill','./src/index.js']
     },
     output: {
-      path: path.join(__dirname, '../dist'),
+      path: path.join(__dirname, '../site/dist'),
       filename: '[name].[chunkhash].js',
-      chunkFilename: "[name].[chunkhash].js"
+      chunkFilename: "[name].[chunkhash].js",
+      publicPath: '/dist'
     },
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    },
+    externals: {
+      jquery: 'window.$',
+      Typed: 'window.Typed'
     },
     module: {
       rules: [{
@@ -73,7 +78,8 @@ module.exports = function () {
       new webpack.HashedModuleIdsPlugin(),
       new WebpackChunkHash(),
       new HtmlWebpackPlugin({
-        template:'template/index.html'
+        template:'template/index.html',
+        filename: '../index.html'
       }),
       new InlineManifestWebpackPlugin({
         name: 'webpackManifest'

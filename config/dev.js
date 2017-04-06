@@ -18,13 +18,17 @@ module.exports = function () {
         ]
     },
     output: {
-      path: path.join(__dirname, '../dist'),
+      path: path.join(__dirname, '../site/dist'),
       filename: '[name].js',
       chunkFilename: "[name].js",
-      publicPath: '/'
+      publicPath: '/dist'
     },
     resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.jsx'],
+      extensions: ['.ts', '.tsx', '.js', '.jsx']
+    },
+    externals: {
+      jquery: 'window.$',
+      Typed: 'window.Typed'
     },
     module: {
       rules: [{
@@ -82,6 +86,7 @@ module.exports = function () {
       }),
       new HtmlWebpackPlugin({
         template:'template/index.html',
+        filename: '../index.html',
         cache: true
       }),
       new InlineManifestWebpackPlugin({
@@ -89,14 +94,6 @@ module.exports = function () {
       }),
       new ExtractTextPlugin('[name].css'),
       new webpack.HotModuleReplacementPlugin(),
-    ],
-    devServer: {
-      hot: true,
-      // enable HMR on the server
-      contentBase: path.join(__dirname, '../dist'),
-      // match the output path
-      publicPath: '/'
-      // match the output `publicPath`
-    },
+    ]
   }
 }

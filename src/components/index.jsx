@@ -2,7 +2,7 @@ import React from 'react';
 import routeConfig from '../routes';
 import styles from './index.css';
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Route,
   Link,
   Redirect,
